@@ -17,10 +17,14 @@ export const DEXIE_CONFIG_TOKEN = new InjectionToken<DexieConfig>('__DEXIE_CONFI
 export class DexieModule {
 
     static forRoot(config: DexieConfig): ModuleWithProviders<DexieModule> {
+
+        const value = {};        
+        Object.assign(value, {[config.name]: config});        
+
         return {
             ngModule: DexieModule,
             providers: [
-                {provide: DEXIE_CONFIG_TOKEN,useValue: config},
+                {provide: DEXIE_CONFIG_TOKEN,useValue: value},
                 {
                     provide: DexieDatabase,
                     useFactory: DexieFactory,
