@@ -19,7 +19,7 @@ export class DexieModule {
     static forRoot(config: DexieConfig): ModuleWithProviders<DexieModule> {
 
         const value = {};        
-        Object.assign(value, {[config.name]: config});        
+        Object.assign(value, {[config.databaseName]: config});        
 
         return {
             ngModule: DexieModule,
