@@ -13,7 +13,7 @@ export const DEXIE_CONFIG_TOKEN = new InjectionToken<DexieConfig>('__DEXIE_CONFI
 @NgModule({})
 export class DexieModule {
 
-    static forRoot(config: DexieConfig): ModuleWithProviders {
+    static forRoot(config: DexieConfig): ModuleWithProviders<DexieModule> {
         return {
             ngModule: DexieModule,
             providers: [
