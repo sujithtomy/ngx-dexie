@@ -1,8 +1,8 @@
-import {NgModule,ModuleWithProviders,InjectionToken} from '@angular/core';
+import { NgModule,ModuleWithProviders,InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {DexieDatabase} from './dexie.database';
-import {DexieService} from './dexie.service';
-import {DexieConfig} from './dexieConfig';
+import { DexieDatabase } from './dexie.database';
+import { DexieService } from './dexie.service';
+import { DexieConfig } from './dexieConfig';
 
 export function DexieFactory(config: DexieConfig) {
     return new DexieDatabase(config);
@@ -11,8 +11,9 @@ export function DexieFactory(config: DexieConfig) {
 export const DEXIE_CONFIG_TOKEN = new InjectionToken<DexieConfig>('__DEXIE_CONFIG__');
 
 @NgModule({
-    declarations: [],
-    imports: [CommonModule]
+    declarations: [DexieService, DexieDatabase],
+    imports: [CommonModule],
+    exports: [DexieModule]
 })
 export class DexieModule {
 
