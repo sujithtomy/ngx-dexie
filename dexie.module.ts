@@ -13,7 +13,7 @@ export const DEXIE_CONFIG_TOKEN = new InjectionToken<DexieConfig>('__DEXIE_CONFI
 @NgModule({
     declarations: [DexieService, DexieDatabase],
     imports: [CommonModule],
-    exports: [DexieModule]
+    exports: []
 })
 export class DexieModule {
 
@@ -27,8 +27,7 @@ export class DexieModule {
                     useFactory: DexieFactory,
                     deps: [DEXIE_CONFIG_TOKEN]
                 },
-                DexieService,
-                DexieDatabase                
+                DexieService                                
             ]
         };
     }
