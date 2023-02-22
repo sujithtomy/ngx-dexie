@@ -25,7 +25,9 @@ export class DexieModule {
                     provide: DexieDatabase,
                     useFactory: DexieFactory,
                     deps: [DEXIE_CONFIG_TOKEN]
-                }
+                },
+                DexieService,
+                DexieDatabase                
             ]
         };
     }
