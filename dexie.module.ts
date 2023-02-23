@@ -11,7 +11,7 @@ export function DexieFactory(config: DexieConfig) {
 export const DEXIE_CONFIG_TOKEN = new InjectionToken<DexieConfig>('__DEXIE_CONFIG__');
 
 @NgModule({
-    declarations: [DexieService, DexieDatabase],
+    declarations: [],
     imports: [CommonModule],
     exports: []
 })
